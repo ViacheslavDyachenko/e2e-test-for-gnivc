@@ -1,0 +1,22 @@
+kind: pipeline
+type: docker
+name: qm-test
+
+steps:
+- name: inst
+  image: docker.gnivc.ru/qm:1.0.0
+  commands:
+  - yarn install
+
+- name: qm
+  image: docker.gnivc.ru/qm:1.0.0
+  commands:
+  - qm run-tests --type unit --ci
+  - qm run-tests --type e2e --ci
+  depends_on:
+    - inst
+
+trigger:
+  event:
+    exclude:
+      - pull_request

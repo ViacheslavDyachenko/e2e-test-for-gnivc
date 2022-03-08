@@ -1,0 +1,65 @@
+.books-block {
+    width: 95%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    &__counter {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: auto;
+    }
+}
+.btn-card {
+    grid-column-start: 2;
+}
+
+.btn-list {
+    grid-column-start: 3;
+}
+
+.btn-search {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    position: relative;
+    left: 126px;
+}
+
+@media all and (max-width: 850px) {
+    .books-block {
+        grid-template-columns: repeat(2, 1fr);
+        &__counter {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        } 
+    }
+    .btn-card {
+        grid-column-start: 1;
+    }
+    
+    .btn-list {
+        grid-column-start: 2;
+    }
+}
+@media all and (max-width: 500px) {
+    .books-block {
+        grid-template-columns: 1fr;
+        &__counter {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        } 
+    }
+    .btn-card {
+        grid-column-start: 1;
+    }
+    
+    .btn-list {
+        grid-column-start: 1;
+    }
+}

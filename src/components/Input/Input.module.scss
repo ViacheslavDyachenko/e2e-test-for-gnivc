@@ -1,0 +1,22 @@
+@import "../../index.scss";
+
+.input {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 35px;
+    width: 300px;
+    margin: auto;
+    border: none;
+    &:focus {
+        outline: 2px solid $red-color;
+    }
+}
+
+@media all and (max-width: 850px) {
+    .input {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+}
